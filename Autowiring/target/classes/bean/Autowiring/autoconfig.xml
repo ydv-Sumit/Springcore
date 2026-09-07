@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enables @Autowired, @Value, @PostConstruct etc. -->
+    <context:annotation-config/>
+      <bean class="bean.Autowiring.Address" id="address">
+      
+      <property name="street" value="linkroad"></property>
+       <property name="city" value="mumbai"></property>
+       
+      </bean>
+      
+     <!--  <bean class="bean.Autowiring.Emp" id="emp1" autowire="byName"></bean>  -->
+         <!--autowirng me "byName" ka mtlb emp object ke varible ka name and  bean ke "id" ka name same hona chahiye jise vah auto inject ho jata hai --> 
+       
+       <!--   <bean class="bean.Autowiring.Emp" id="emp1" autowire="byType"></bean>-->
+       <!-- "byType" ka mtbl ki vah "bean.Autowiring.Address" type ka hai ki nhi Agar Address type ka 2 bean hai to uska Adress type ke sath  varible ka name and  bean ke "id" ka name same hona chahiye    -->
+       
+       <bean class="bean.Autowiring.Emp" id="emp1" autowire="constructor"></bean>
+       
+       
+       
+       
+    </beans>
